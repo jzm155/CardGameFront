@@ -16,9 +16,57 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+    .cards {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 .container .table{
     height: 60%;
+    display:flex;
+    flex-direction:column;
+    border: solid 1px;
 }
+
+    .container .table .player {
+        height: 100%;
+    }
+    .container .table .enemy {
+        height: 100%;
+    }
+
+    .container .table .player .cards {
+        height: 50%;
+        display: flex;
+    }
+
+    .container .table .enemy .cards {
+        height: 50%;
+        display: flex;
+    }
+    .container .table .enemy-side {
+        display: flex;
+        gap: 50px;
+        width:100%;
+        height:50%;
+        justify-content:center;
+    }
+    .container .table .player-side {
+        display: flex;
+        gap: 50px;
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+    }
+.card-table {
+    width: 170px;
+    height: 250px;
+    border: solid 1px;
+}
+    .card-table:hover {
+        border:solid 1px;
+        border-color: gold;
+    }
 .container .enemy {
     width: 100%;
     display: flex;
@@ -44,6 +92,12 @@ body {
 .container .enemy .cards .card:hover {
 
 }
+.container .table .enemy .cards {
+    height:100%;
+}
+.table .enemy .cards .card {
+    background: var(--enemy-bg-color);
+}
 .container .player {
     width: 100%;
     display: flex;
@@ -51,12 +105,7 @@ body {
     overflow-y:visible;
     justify-content: space-between;
 }
-.container .player .cards {
-    width: 100%;
-    display: flex;
-    justify-content:center;
-}
-.container .player .cards .card {
+.player .cards .card {
     background-color: var(--player-bg-color);
 }
 .container .player .cards .card:hover {
@@ -75,6 +124,7 @@ body {
     font-family: 'Arial Rounded MT';
     transform: rotate(calc(var(--i) * 0.75deg));
     border-radius: 5px 5px 5px 5px;
+    position: relative;
 }
 .card:hover {
     border-color: gold;
