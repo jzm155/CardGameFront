@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\img",
-    "\\img\\cards",
-    "\\sound"
+    "\\page",
+    "\\page\\create",
+    "\\page\\deck",
+    "\\page\\game"
   ],
-  "SelectedNode": "\\img\\cards\\elfa-arqueira.png",
+  "SelectedNode": "\\page\\deck\\index.html",
   "PreviewInSolutionExplorer": false
 }

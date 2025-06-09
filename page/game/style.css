@@ -1,0 +1,194 @@
+:root {
+    --player-bg-color: #009688;
+    --player-bg-color-hover: #4db6ac;
+    --enemy-bg-color: #ab47bc;
+    --enemy-bg-color-hover: #ba68c8;
+}
+body {
+    background-image: url("../../img/fundo/areia.png");
+}
+.container {
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    .cards {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+.container .table{
+    height: 60%;
+    display:flex;
+    flex-direction:column;
+    border: solid 1px;
+}
+
+    .container .table .player {
+        height: 100%;
+    }
+    .container .table .enemy {
+        height: 100%;
+    }
+
+    .container .table .player .cards {
+        height: 50%;
+        display: flex;
+    }
+
+    .container .table .enemy .cards {
+        height: 50%;
+        display: flex;
+    }
+    .container .table .enemy-side {
+        display: flex;
+        gap: 50px;
+        width:100%;
+        height:50%;
+        justify-content:center;
+    }
+    .container .table .player-side {
+        display: flex;
+        gap: 50px;
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+    }
+.card-table {
+    width: 170px;
+    height: 250px;
+    border: solid 1px;
+}
+    .card-table:hover {
+        border:solid 1px;
+        border-color: gold;
+    }
+.container .enemy {
+    width: 100%;
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+}
+    .container .enemy .cards {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+.container .enemy .cards .card {
+    --s: 40px;
+    --_g: radial-gradient(#F4EAD5 31%,#0000 32%);
+    --_l: radial-gradient(#594F4F 15%,#0000 16%);
+    background: var(--_l),var(--_l),var(--_g),var(--_g),var(--enemy-bg-color);
+    background-position: 0 0,var(--s) var(--s);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+    animation: x 2s cubic-bezier(0.5,92,0.5,-92) infinite, y 2s cubic-bezier(0.5,92,0.5,-92) infinite -.5s;
+    border-radius: 5px 5px 5px 5px;
+}
+.container .enemy .cards .card:hover {
+
+}
+.container .table .enemy .cards {
+    height:100%;
+}
+.table .enemy .cards .card {
+    background: var(--enemy-bg-color);
+}
+.container .player {
+    width: 100%;
+    display: flex;
+    height: 20%;
+    overflow-y:visible;
+    justify-content: space-between;
+}
+.player .cards .card {
+    background-color: var(--player-bg-color);
+}
+.container .player .cards .card:hover {
+    align-self:end;
+}
+.container .player .card:hover {
+    background-color: var(--player-bg-color-hover);
+}
+.card {
+    width: 170px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border: solid 3px black;
+    font-family: 'Arial Rounded MT';
+    transform: rotate(calc(var(--i) * 0.75deg));
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+}
+.card:hover {
+    border-color: gold;
+    transform: rotate(0deg)
+}
+.card .card-title {
+    height: 10%;
+    display: flex;
+    margin: 3px;
+    justify-content: space-between;
+}
+.card .card-image {
+    height: 65%;
+}
+.card .card-description {
+    height: 20%;
+    margin: 3px;
+}
+.card .card-power {
+    height: 5%;
+    display: flex;
+    margin:0px 5px 7px 0px;
+    justify-content: end;
+}
+.player .deck {
+    display: flex;
+    flex-direction: column;
+    justify-content: bottom;
+    height: 100%;
+}
+.player .deck-card {
+    --s: 40px;
+    --_g: radial-gradient(#F4EAD5 31%,#0000 32%);
+    --_l: radial-gradient(#594F4F 15%,#0000 16%);
+    background: var(--_l),var(--_l),var(--_g),var(--_g),var(--player-bg-color);
+    background-position: 0 0,var(--s) var(--s);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+    animation: x 2s cubic-bezier(0.5,92,0.5,-92) infinite, y 2s cubic-bezier(0.5,92,0.5,-92) infinite -.5s;
+}
+.enemy .deck-card {
+    --s: 40px;
+    --_g: radial-gradient(#F4EAD5 31%,#0000 32%);
+    --_l: radial-gradient(#594F4F 15%,#0000 16%);
+    background: var(--_l),var(--_l),var(--_g),var(--_g),var(--enemy-bg-color);
+    background-position: 0 0,var(--s) var(--s);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+    animation: x 2s cubic-bezier(0.5,92,0.5,-92) infinite, y 2s cubic-bezier(0.5,92,0.5,-92) infinite -.5s;
+}
+.player .deck-card:hover {
+    background-color: var(--player-bg-color-hover);
+}
+.enemy .deck-card:hover {
+    background-color: var(--enemy-bg-color-hover);
+}
+.deck-card {
+    width: 110px;
+    height: 180px;
+    cursor: pointer;
+    border: solid 3px black;
+}
+.card-image {
+    overflow: hidden;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+}
